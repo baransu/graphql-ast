@@ -1,0 +1,23 @@
+{
+  "name": "graphql-ast",
+  "version": "0.1.0",
+  "esy": {
+    "build": "dune build -p #{self.name}"
+  },
+  "scripts": {
+    "test": "esy x RunTests.exe"
+  },
+  "dependencies": {
+    "@esy-ocaml/reason": "*",
+    "@opam/dune": ">=1.6.0",
+    "@opam/yojson": "1.7.0",
+    "ocaml": "^4.2.0"
+  },
+  "devDependencies": {
+    "ocaml": "~4.8.1000",
+    "@reason-native/rely": "*",
+    "@reason-native/console": "*",
+    "refmterr": "*",
+    "@opam/merlin": "*"
+  }
+}

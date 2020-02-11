@@ -1,0 +1,5 @@
+
+(library
+   (name GraphQL)
+   (public_name graphql-ast)
+   (libraries yojson))
