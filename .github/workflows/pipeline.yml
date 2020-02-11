@@ -21,10 +21,10 @@ jobs:
         with:
           node-version: 12.x
 
-      - name: setup
+      - name: Setup
         run: npm install -g esy@latest
 
-      - name: get esy store path
+      - name: Get esy store path
         id: esy_cache_path
         shell: bash
         run: |
@@ -38,7 +38,7 @@ jobs:
           THE_ESY__CACHE_INSTALL_PATH=${HOME_ESY3}${UNDERS}/i  
           echo "THE_ESY__CACHE_INSTALL_PATH: $THE_ESY__CACHE_INSTALL_PATH"
           echo "##[set-output name=path;]$THE_ESY__CACHE_INSTALL_PATH"
-      - name: restore esy cache
+      - name: Restore esy cache
         uses: actions/cache@v1
         with:
           path: ${{ steps.esy_cache_path.outputs.path }}
@@ -46,14 +46,14 @@ jobs:
           restore-keys: |
             v1-esy-${{ matrix.os }}-
 
-      - name: install
+      - name: Install
         run: |
           esy install
 
-      - name: build
+      - name: Build
         run: |
           esy build
 
-      - name: test
+      - name: Test
         run: |
           esy test
