@@ -5,19 +5,21 @@
     "build": "dune build -p #{self.name}"
   },
   "scripts": {
-    "test": "esy x RunTests.exe"
+    "test": "esy x RunTests.exe",
+    "format": "dune build @fmt --auto-promote --root ."
   },
   "dependencies": {
-    "@esy-ocaml/reason": "*",
-    "@opam/dune": ">=1.6.0",
+    "@esy-ocaml/reason": "~3.5.2",
+    "@opam/dune": "1.6.0",
     "@opam/yojson": "1.7.0",
-    "ocaml": "^4.2.0"
+    "ocaml": ">=4.6.0"
   },
   "devDependencies": {
     "ocaml": "~4.8.1000",
-    "@reason-native/rely": "*",
+    "@reason-native/rely": "3.1.0",
     "@reason-native/console": "*",
     "refmterr": "*",
-    "@opam/merlin": "*"
+    "@opam/fmt": "*",
+    "@opam/ocamlformat": "*"
   }
 }
